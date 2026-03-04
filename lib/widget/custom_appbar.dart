@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/core/app_assets.dart';
+import 'package:untitled/core/text_styles.dart';
 
 class CustomAppbar extends StatelessWidget {
   const CustomAppbar({super.key});
@@ -10,16 +12,10 @@ class CustomAppbar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: 65,
-            height: 65,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: const DecorationImage(
-                image: NetworkImage('https://i.pravatar.cc/150?img=12'),
-                fit: BoxFit.cover,
-              ),
-            ),
+          SizedBox(
+            width: 80,
+            height: 80,
+            child: Image.asset('asstes/images/Rectangle 17405 (1).png',fit: BoxFit.fill,),
           ),
 
           Column(
@@ -28,24 +24,15 @@ class CustomAppbar extends StatelessWidget {
                 children: [
                   const Text(
                     'الموقع الحالي',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: AppTextStyles.appBarLocationTitle,
                   ),
                   const SizedBox(width: 4),
-                  Image.asset("asstes/Vector.png",width: 30,),
+                  Image.asset(AppAssets.locationIcon, width: 30),
                 ],
               ),
               const Text(
                 '19 شارع أحمد الصاوي، مدينة نصر  ',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black87,
-                  fontWeight: FontWeight.w500,
-
-                ),
+                style: AppTextStyles.appBarLocationSubtitle,
               ),
             ],
           ),

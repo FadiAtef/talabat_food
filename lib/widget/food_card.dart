@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/core/app_assets.dart';
+import 'package:untitled/core/text_styles.dart';
 
 class FoodCard extends StatelessWidget {
-   FoodCard({super.key, required this.name,
+  FoodCard({
+    super.key,
+    required this.name,
     required this.restaurant,
     required this.price,
     required this.rating,
-    required this.image,});
+    required this.image,
+  });
 
-   final String name;
-   final String restaurant;
-   final String price;
-   final String rating;
-   final String image;
+  final String name;
+  final String restaurant;
+  final String price;
+  final String rating;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +35,12 @@ class FoodCard extends StatelessWidget {
         ],
       ),
       child: Container(
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(22),
           border: Border.all(color: Colors.grey.shade300),
           color: Colors.grey.shade300,
         ),
         child: Column(
-
           children: [
             Image.asset(
               image,
@@ -45,7 +49,7 @@ class FoodCard extends StatelessWidget {
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
-                 height: 110,
+                  height: 110,
                   width: double.infinity,
                   color: Colors.grey[200],
                   child: Image.asset(image),
@@ -54,8 +58,11 @@ class FoodCard extends StatelessWidget {
             ),
             Spacer(),
             Container(
-              decoration:  BoxDecoration(
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(22),bottomRight: Radius.circular(22)),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(22),
+                  bottomRight: Radius.circular(22),
+                ),
 
                 color: Colors.white,
               ),
@@ -66,19 +73,13 @@ class FoodCard extends StatelessWidget {
                   children: [
                     Text(
                       name,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: AppTextStyles.productName.copyWith(fontSize: 13),
                       textAlign: TextAlign.right,
                     ),
                     const SizedBox(height: 2),
                     Text(
                       restaurant,
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.grey[600],
-                      ),
+                      style: AppTextStyles.bodySmall.copyWith(fontSize: 10),
                       textAlign: TextAlign.right,
                     ),
                     const SizedBox(height: 8),
@@ -89,23 +90,24 @@ class FoodCard extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                const Icon(Icons.star, color: Colors.amber, size: 14),
+                                const Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                  size: 14,
+                                ),
                                 const SizedBox(width: 2),
                                 Text(
                                   rating,
-                                  style: const TextStyle(
+                                  style: AppTextStyles.label.copyWith(
                                     fontSize: 11,
-                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ],
                             ),
                             Text(
                               price,
-                              style: const TextStyle(
+                              style: AppTextStyles.productPrice.copyWith(
                                 fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFFFF6B6B),
                               ),
                             ),
                           ],
@@ -113,14 +115,10 @@ class FoodCard extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFFF6B6B),
+                            color: const Color(0xFFF55540),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: const Icon(
-                            Icons.shopping_cart_outlined,
-                            color: Colors.white,
-                            size: 16,
-                          ),
+                          child: Image.asset(AppAssets.group2456),
                         ),
                       ],
                     ),

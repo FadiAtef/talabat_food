@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/core/app_assets.dart';
 
 class FoodBanner extends StatelessWidget {
   const FoodBanner({super.key});
@@ -9,12 +10,8 @@ class FoodBanner extends StatelessWidget {
       width: double.infinity,
 
       padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-
-        borderRadius: BorderRadius.circular(24),
-
-      ),
-      child: Image.asset('asstes/Rectangle 17407.png',fit: BoxFit.cover,),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
+      child: Image.asset(AppAssets.rectangle17407, fit: BoxFit.cover),
     );
   }
 }
